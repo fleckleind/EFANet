@@ -6,7 +6,6 @@ Efficient Feature Aggregation Network for Medical Image Segmentation
 [BUSI](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset), 
 [TN3K](https://drive.google.com/file/d/1reHyY5eTZ5uePXMVMzFOq5j3eFOSp50F/view), 
 [ISIC18](https://pan.baidu.com/s/1Y0YupaH21yDN5uldl7IcZA?pwd=dybm).
-
 * Please follow the data format and storage requirements from [EGE-UNet](https://github.com/JCruan519/EGE-UNet) for all datasets.
 
 
