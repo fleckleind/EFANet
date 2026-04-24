@@ -9,6 +9,11 @@ import torch
 from tensorboardX import SummaryWriter
 from torch.utils.data import DataLoader
 
+from utils import *
+from engine import *
+from models.efanet import EFANet
+from configs import config_setting
+
 
 def load_best(model, best_model_dict):
     full_dict = copy.deepcopy(best_model_dict)
@@ -139,5 +144,5 @@ def main(config):
 
 
 if __name__ == '__main__':
-    config = setting_config
+    config = config_setting
     main(config)
