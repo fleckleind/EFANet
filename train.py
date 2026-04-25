@@ -71,8 +71,8 @@ def main(config):
 
     print('#----------Prepareing Model----------#')
     model_cfg = config.model_config
-    if config.network == 'egeunet':
-        model = EGEUNet(num_classes=model_cfg['num_classes'], 
+    if config.network == 'efanet':
+        model = EFANet(num_classes=model_cfg['num_classes'], 
                         input_channels=model_cfg['input_channels'], 
                         c_list=model_cfg['c_list'], 
                         bridge=model_cfg['bridge'], gt_ds=model_cfg['gt_ds'],)
