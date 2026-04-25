@@ -130,14 +130,13 @@ def main(config):
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
                     'scheduler_state_dict': scheduler.state_dict(),
-                }, os.path.join(checkpoint_dir, 'wps-'+config.datasets+'-ep'+str(epoch)+'.pth')) 
+                }, os.path.join(checkpoint_dir, config.network+'-'+config.datasets+'-ep'+str(epoch)+'.pth'))
 
     if os.path.exists(os.path.join(checkpoint_dir, 'best.pth')):
         print('#----------Testing----------#')
         best_weight = torch.load(config.work_dir + 'checkpoints/best.pth', map_location=torch.device('cpu'))
         model.load_state_dict(best_weight)
-        loss = test_one_epoch(
-            val_loader, model, criterion, logger, config,)
+        loss = test_one_epoch(val_loader, model, criterion, logger, config,)
         os.rename(
             os.path.join(checkpoint_dir, 'best.pth'),
             os.path.join(checkpoint_dir, f'best-epoch{min_epoch}-loss{min_loss:.4f}.pth')
